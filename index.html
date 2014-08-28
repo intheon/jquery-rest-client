@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div id="main">
+
+	<div class="nicePanel">
+		<h1>Create a reader's XML</h1>
+		<form id="readerXML">
+    	<input type="text" placeholder="Username" name="username"> <br/> 
+    	<input type="text" placeholder="Password" name="password"> <br/>
+    	<input type="text" placeholder="Email" name="email"> <br/> 
+    	<input type="text" placeholder="First Name" name="firstName"> <br/>
+    	<input type="text" placeholder="Last Name" name="lastNames"> <br/> 
+    	<input type="text" placeholder="Number of Devices" name="authorisedDeviceLimit"> <br/>
+  		</form>
+	</div>
+
+
+</div>
+<script>
+
+$('#readerXML').change(function (){
+	var readerXml = $("#readerXML").find("input").serialize();
+});
+
+
+
+
+
+
+</script>
+</body>
+</html>

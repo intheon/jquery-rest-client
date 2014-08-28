@@ -1,0 +1,26 @@
+body{
+	margin:0px;
+	padding:0px;
+	font-family:verdana;
+	font-size:1em;
+}
+h1{
+	margin:0px;
+	padding:0px;
+	font-size:1.45em;
+	font-weight:normal;
+}
+.nicePanel{
+	background-color: #D2E7EF;
+	border-radius: 18px;
+	color:#4B6772;
+	padding:1%;
+	margin-bottom:1%;
+}
+#main{
+	margin:3%;
+	padding:3%;
+}
+#output{
+	width:70%;
+}
