@@ -1,0 +1,106 @@
+body{
+	margin:0px;
+	padding:0px;
+	font-family:arial;
+	font-size:1em;
+	background-color: #282323;
+	color:#E5E5E5;
+}
+h1{
+	margin:0px;
+	padding:0px;
+	font-size:1.35em;
+	color:#E9AC61;
+	margin-bottom:0.77%;
+}
+a
+{
+	margin:0px;
+	padding:0px;
+	color:#E3C197;
+	margin-bottom:0.77%;
+	text-decoration:none;
+}
+}
+h2{
+	margin:0px;
+	padding:0px;
+	font-size:1.05em;
+	font-weight:normal;
+	color:#9D9797;
+}
+.roundPane{
+	background-color: #3A3535 !important;
+	border-radius: 18px;
+	color:#9D9797;
+	padding:5%;
+	margin:11%;
+	text-align:center;
+}
+
+#getAccessKeys{
+	right:0;
+	left:0;
+	padding:2%;
+}
+
+#getAccessKeys input[type="text"]{
+	width:46%;
+	padding:2%;
+	text-align: center;
+	margin-bottom:1.5%;
+	background-color: #504B4B;
+	border: none;
+	color:#E5E5E5;
+}
+
+#readersPane{
+	background: url(../img/office26.png);
+	background-repeat: no-repeat;
+	background-position: -100px -100px -100px -100px;
+	position: relative
+}
+
+#getAccessKeys input[type="button"]{
+	width:33%;
+	padding:2%;
+	text-align: center;
+	margin-bottom:1.5%;
+	background-color: #504B4B;
+	border: none;
+	cursor: pointer;
+	color:#E5E5E5;
+}
+
+#content{
+	padding:2%;
+}
+#output{
+	width:70%;
+}
+#toolbar{
+	height:45px;
+	width:100%;
+	background-color:black;
+	float:right;
+	padding:10px;
+}
+
+#toolbar > h1{
+	padding:10px;
+	margin:0;
+	float:right;
+	font-size:1.15em;
+	font-weight:normal;
+}
+
+
+#right_tool{
+	float:right;
+	padding:1%;
+}
+input[type="button"]{
+	background-color:#414242;
+}
+
+
