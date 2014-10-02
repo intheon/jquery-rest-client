@@ -33,9 +33,18 @@ h2{
 	background-color: #3A3535 !important;
 	border-radius: 18px;
 	color:#9D9797;
-	padding:5%;
-	margin:11%;
+	padding:5% !important;
+	margin:11% !important;
 	text-align:center;
+	position:relative;
+}
+
+.closeBtn{
+	top:0;
+	right:0;
+	position:absolute;
+	margin-top:7%;
+	margin-right:4%;
 }
 
 #getAccessKeys{
@@ -55,10 +64,9 @@ h2{
 }
 
 #readersPane{
-	background: url(../img/office26.png);
+	background: url(../img/person84.png) bottom right;
+	background-size: 25%;
 	background-repeat: no-repeat;
-	background-position: -100px -100px -100px -100px;
-	position: relative
 }
 
 #getAccessKeys input[type="button"]{
@@ -102,5 +110,6 @@ h2{
 input[type="button"]{
 	background-color:#414242;
 }
+
 
 

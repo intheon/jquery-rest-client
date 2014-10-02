@@ -61,13 +61,25 @@ function logMeOut()
 	checkIfLoggedIn();
 }
 
-var contentTargets = $("#content .roundPane");
-	$(contentTargets).click(expandOptions);
+$("#content .roundPane").toggle(animateOn,animateOff);
 
-function expandOptions()
+function animateOn(event)
 {
 	var id = event.currentTarget.id;
-	$("#" + id).animate({ "height": "222px" }, "slow" );
-	showElement("#readersActions");
-	
+	var sliced = id.substr(0,id.length - 4)  + "Actions";
+	$("#" + id).animate({ "height": "250", "background-color": "#4A4646"}, "slow" );
+	$("#" + id).append("<img src='http://intheon.xyz/img/closeBtn.png' class='closeBtn' width='3%'/>");
+	$(".closeBtn").fadeIn(1000);
+	showElement("#" + sliced);	
 }
+
+function animateOff(event)
+{
+	var id = event.currentTarget.id;
+	var sliced = id.substr(0,id.length - 4)  + "Actions";
+	$("#" + id).animate({ "height": ""}, 1500 );
+	$(".closeBtn").fadeOut(1000);
+	$(".closeBtn").remove();
+	hideElement("#" + sliced);	
+}
+
