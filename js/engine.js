@@ -61,25 +61,76 @@ function logMeOut()
 	checkIfLoggedIn();
 }
 
-$("#content .roundPane").toggle(animateOn,animateOff);
+$(".clickable").toggle(animateOn,animateOff);
+
+var typesOfPane = {
+	paneOne: "readersPane",
+	paneTwo: "editionsPane",
+	paneThree: "accessPane"
+};
 
 function animateOn(event)
 {
-	var id = event.currentTarget.id;
+	// get targets
+
+	var id = event.currentTarget.parentElement.id;
 	var sliced = id.substr(0,id.length - 4)  + "Actions";
-	$("#" + id).animate({ "height": "250", "background-color": "#4A4646"}, "slow" );
-	$("#" + id).append("<img src='http://intheon.xyz/img/closeBtn.png' class='closeBtn' width='3%'/>");
+	
+	// hides other panels
+
+	for (val in typesOfPane){
+		if (typesOfPane.hasOwnProperty(val))
+		{
+			if (typesOfPane[val] !== id)
+			{
+				//found items to remove!
+				var paneToHide = typesOfPane[val];
+				$("#" + paneToHide).fadeOut(1000);
+			}
+		}
+	}
+
+	// nicely expands focused panel and shows options
+	$("#" + id).animate({ "height": "+=17%","width": "+=17%"}, "slow" );
+	$(".clickable").append("<span class='closeBtn'>X</span>");
 	$(".closeBtn").fadeIn(1000);
-	showElement("#" + sliced);	
+	showElement("#" + sliced);
 }
 
 function animateOff(event)
 {
-	var id = event.currentTarget.id;
+	var id = event.currentTarget.parentElement.id;
 	var sliced = id.substr(0,id.length - 4)  + "Actions";
-	$("#" + id).animate({ "height": ""}, 1500 );
+
+	for (val in typesOfPane){
+		if (typesOfPane.hasOwnProperty(val))
+		{
+			if (typesOfPane[val] !== id)
+			{
+				var paneToShow = typesOfPane[val];
+				$("#" + paneToShow).show().hide().fadeIn(1000)
+			}
+		}
+	}
+	$("#" + id).animate({ "height": "-=17%","width":"-=17%"}, 1500 );
 	$(".closeBtn").fadeOut(1000);
 	$(".closeBtn").remove();
 	hideElement("#" + sliced);	
 }
+
+function createReader()
+{
+	event.bubbles = false ;
+		console.log(event);
+	$("#readersActions").hide();
+	$("#readersHTML").append("<form><input type='text' ><br /><input type='text' ><br /></form>");
+}
+
+function queryReader()
+{
+	$("#readersActions").hide("fast");
+	$("#readersHTML").append("<div id='queryReader'><form><label>Are you querying all, or a specific reader?</label><input type='button' value='All Readers' onclick='queryAllReaders()'><input type='button' value='Specific Readers'></form></div>").hide().slideDown("medium");
+
+}
+
 
