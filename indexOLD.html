@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+<div id="wrapper">
+
+<div id="logInPrompt" class="roundPane" style="display:none">
+	<h1>Hi there, you aren't logged in.</h1>
+	<h2>To gain access to the REST Client. Please enter your credentials below:</h2>
+	<form id="getAccessKeys">
+		<input type="text" placeholder="What is your name?" name="adminName"/> <br/> 
+		<input type="text" placeholder="API Key?" name="adminApiKey"/> <br/> 
+		<input type="text" placeholder="Shared Secret?" name="adminSharedSecret"/> <br/> 
+		<input type="button" id="getAccessKeysNext" value="Next >>" onclick="grabValues()"/>
+	</form>
+</div>
+
+<div id="toolbar" style="display:none">
+	<h1>Hey there, <span id="adminName"></span>! <a href="#" onclick="logMeOut()" >Logout?</a></h1>
+</div>
+
+<div id="content" style="display:none">
+
+<div class="roundPane" id="readersPane">
+	<h1 class="clickable">Readers</h1>
+	<div id="readersActions" style="display:none">
+		<a href="#" onclick="createReader()"><h2>Create a Reader</h2></a>
+		<a href="#" onclick="queryReader()"><h2>Query a Reader</h2></a>
+		<a href="#" onclick="updateReader()"><h2>Update a Reader</h2></a>
+		<a href="#" onclick="deleteReader()"><h2>Delete a Reader</h2></a>
+	</div>
+	<div id="readersHTML"></div>
+</div>
+
+
+<div class="roundPane" id="editionsPane">
+	<h1 class="clickable">Editions</h1>
+	<div id="editionsActions" style="display:none">
+		<h2>Query all Edition</h2>
+		<h2>Query an Edition</h2>
+	</div>
+</div>
+
+
+<div class="roundPane" id="accessPane">
+	<h1 class="clickable">Access</h1>
+	<div id="accessActions" style="display:none">
+		<h2>Create a permission for a Reader</h2>
+		<h2>Query a permission</h2>
+		<h2>Delete a permission</h2>
+		<h2>Create a subscription period for a Reader</h2>
+		<h2>Query a subscription period</h2>
+		<h2>Delete a permission</h2>
+	</div>
+</div>
+
+
+</div>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/engine.js"></script>
+</body>
+</html>

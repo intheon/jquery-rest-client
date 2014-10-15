@@ -23,45 +23,97 @@
 	<h1>Hey there, <span id="adminName"></span>! <a href="#" onclick="logMeOut()" >Logout?</a></h1>
 </div>
 
+<div id="sidePanel" style="display:none">
+	<ul class="menu">
+		<li id="readers_menu">Readers</li>
+		<li id="editions_menu">Editions</li>
+		<li id="access_menu">Access</li>
+		<li id="config_menu">Config</li>
+	</ul>
+</div>
+
 <div id="content" style="display:none">
+	<div id="readers_menu_content" style="display:none" class="contentPanel">
+		<h1>Readers</h1>
+		<p>Standard CRUD requests for an end user.</p>
 
-<div class="roundPane" id="readersPane">
-	<h1 class="clickable">Readers</h1>
-	<div id="readersActions" style="display:none">
-		<a href="#" onclick="createReader()"><h2>Create a Reader</h2></a>
-		<a href="#" onclick="queryReader()"><h2>Query a Reader</h2></a>
-		<a href="#" onclick="updateReader()"><h2>Update a Reader</h2></a>
-		<a href="#" onclick="deleteReader()"><h2>Delete a Reader</h2></a>
+		<div class="tab_panel">
+
+        <!-- TAB BOXES -->
+
+            <ul class="tabs">
+                <a href="#create_reader"><li id="create_reader_tab">Create</li></a>
+                <a href="#read_reader"><li id="read_reader_tab">Read</li></a>
+                <a href="#update_reader"><li id="update_reader_tab">Update</li></a>
+                <a href="#delete_reader"><li id="delete_reader_tab">Delete</li></a>
+            </ul>
+
+        <!-- TAB CONTENT -->
+
+            <div id="tab_content">
+
+                <div id="create_reader">
+                    <form name="createReaderForm" id="createReaderForm">
+   						<input type="text" placeholder="Username" id="crUsername" /> <br />
+   						<input type="text" placeholder="Password" id="crPassword" /> <br />
+   						<input type="text" placeholder="Email address" id="crEmail" /> <br />
+   						<input type="text" placeholder="First Name" id="crFirstname" /> <br />
+   						<input type="text" placeholder="Last Name" id="crLastname" /> <br />
+   						<input type="text" placeholder="Num Devices" id="crNumDevices" /> <br />
+                        <input type="button" id="createReaderFormConfirm" value="Create">
+                    </form>
+                </div>
+
+                <div id="read_reader">
+                     <form name="readReaderForm" id="readReaderForm">
+                     	<p>Enter readerId, username, email address, first name, or last name</p>
+   						<input type="text" placeholder="Enter Here" id="rrIdentify" /> <br />
+                        <input type="button" id="readReaderFormConfirm" value="Retreive">
+                    </form>
+                </div>
+
+                <div id="update_reader" style="display:none;">
+                    <form name="updateReaderForm" id="updateReaderForm">
+                        <p>Enter readerId, username, email address, first name, or last name</p>
+   						<input type="text" placeholder="Enter Here" id="urIdentify" /> <br />
+   						<p>TODO: Here once the ID is retreived, allow a PUT REQUEST TO BE FORMED</p>
+   						<input type="text" placeholder="Password" id="crPassword" /> <br />
+   						<input type="text" placeholder="Email address" id="crEmail" /> <br />
+   						<input type="text" placeholder="First Name" id="crFirstname" /> <br />
+   						<input type="text" placeholder="Last Name" id="crLastname" /> <br />
+   						<input type="text" placeholder="Num Devices" id="crNumDevices" /> <br />
+                        <input type="button" id="updateReaderFormConfirm" value="Update">
+                    </form>
+                </div>
+
+                <div id="delete_reader">
+                    <form name="deleteReaderForm" id="deleteReaderForm">
+                        <p>Enter readerId, username, email address, first name, or last name</p>
+   						<input type="text" placeholder="Enter Here" id="drIdentify" /> <br />
+                        <input type="button" id="deleteReaderFormConfirm" value="Delete">
+                    </form>
+                </div>
+
+            </div> <!-- END TAB CONTENT WRAPPER -->
+
+        </div> <!-- END TAB PANEL -->
 	</div>
-	<div id="readersHTML"></div>
-</div>
-
-
-<div class="roundPane" id="editionsPane">
-	<h1 class="clickable">Editions</h1>
-	<div id="editionsActions" style="display:none">
-		<h2>Query all Edition</h2>
-		<h2>Query an Edition</h2>
+	<div id="editions_menu_content" style="display:none" class="contentPanel">
+		<h1>Editions</h1>
+		<p>Blah!</p>
+	</div>
+	<div id="access_menu_content" style="display:none" class="contentPanel">
+		<h1>Access</h1>
+		<p>Blah!</p>
+	</div>
+	<div id="config_menu_content" style="display:none" class="contentPanel">
+		<h1>Config</h1>
+		<p>Blah!</p>
 	</div>
 </div>
 
-
-<div class="roundPane" id="accessPane">
-	<h1 class="clickable">Access</h1>
-	<div id="accessActions" style="display:none">
-		<h2>Create a permission for a Reader</h2>
-		<h2>Query a permission</h2>
-		<h2>Delete a permission</h2>
-		<h2>Create a subscription period for a Reader</h2>
-		<h2>Query a subscription period</h2>
-		<h2>Delete a permission</h2>
-	</div>
-</div>
-
-
-</div>
 </div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-<script type="text/javascript" src="js/engine.js"></script>
+<script type="text/javascript" src="js/index_engine.js"></script>
 </body>
 </html>
